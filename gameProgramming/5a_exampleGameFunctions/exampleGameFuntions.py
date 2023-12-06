@@ -1,26 +1,14 @@
 # Example Game Functions Project, Jahreem Jeffers, v0.9 W.I.P code wont start but its not broken :(
 import random
 
-def functionaone():
-    pass
-
-def functionTwo(param1):
-    pass
-
-def functionThree(param1 = "Default Value"):
-    pass
-
-def functionFour(param1, param2, param3):
-    pass
-# Example to the funciton
-# fighting game genre
-# Function to get user input for characrter stats
-# Function to get user input for character stats 
+# Missing use of random.randint() 
+# Need a while loop. 
 
 def get_character_stats(character_name): 
 
     """ 
-
+    Make sure the function prints min / max values expected.  
+    Explain how / what the stats do.  
     Gets user input for character stats and returns a tuple of (health, attack, defense). 
 
     Parameters: 
@@ -34,13 +22,9 @@ def get_character_stats(character_name):
     """ 
 
     print(f"\nEnter the stats for {character_name}:") 
-
     health = int(input("Health: ")) 
-
     attack = int(input("Attack: ")) 
-
     defense = int(input("Defense: ")) 
-
     return health, attack, defense 
 
   
@@ -66,60 +50,34 @@ def compare_characters(char1_name, char1_stats, char2_name, char2_stats):
     """ 
 
     print(f"\nComparing Characters:") 
-
-    print(f"{char1_name}: {char1_stats}") 
-
-    print(f"{char2_name}: {char2_stats}") 
-
-  
-
+    
+    print(f"{char1_name}: {char1_stats}") # See if you can print the stats in a player friendly format.  
+    print(f"{char2_name}: {char2_stats}")     
     # Compare health 
 
     if char1_stats[0] > char2_stats[0]: 
-
         print(f"{char1_name} has more health.") 
-
     elif char1_stats[0] < char2_stats[0]: 
-
         print(f"{char2_name} has more health.") 
-
     else: 
-
         print("Both characters have the same health.") 
-
-  
 
     # Compare attack 
 
     if char1_stats[1] > char2_stats[1]: 
-
         print(f"{char1_name} has more attack.") 
-
     elif char1_stats[1] < char2_stats[1]: 
-
         print(f"{char2_name} has more attack.") 
-
     else: 
-
         print("Both characters have the same attack.") 
 
-  
-
     # Compare defense 
-
     if char1_stats[2] > char2_stats[2]: 
-
         print(f"{char1_name} has more defense.") 
-
     elif char1_stats[2] < char2_stats[2]: 
-
         print(f"{char2_name} has more defense.") 
-
     else: 
-
         print("Both characters have the same defense.") 
-
-  
 
 # Function to display character selection menu 
 
@@ -140,23 +98,13 @@ def character_selection_menu(characters):
     """ 
 
     print("\nCharacter Selection Menu:") 
-
     for i, character in enumerate(characters, 1): 
-
         print(f"{i}. {character}") 
-
-  
-
     while True: 
-
         selection = int(input("Select a character (1-{}): ".format(len(characters)))) 
-
         if 1 <= selection <= len(characters): 
-
             return characters[selection - 1] 
-
         else: 
-
             print("Invalid selection. Please choose a valid character.") 
 
   
@@ -172,8 +120,7 @@ def character_selection():
     """ 
 
     print("Welcome to the Fighting Game Character Selection!\n") 
-
-  
+ 
 
     # Get stats for Character 1 
 
