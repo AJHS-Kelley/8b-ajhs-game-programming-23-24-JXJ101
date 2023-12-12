@@ -10,6 +10,10 @@ class Person: # Use pascalCase fro ClassNames
     def __str__(self):
         return f"Name: {self.name}\nThis person is {self.age} years old.\n They weigh {self.weight} pounds.\n"
 
+    def classFunction(self):
+        print("This is an example of a class function.\n")
+        print("It only works when called on an object of that class.")
+
 
 person1 = Person("aiden Redfield", 25, 201)
 print(person1)
@@ -23,3 +27,5 @@ elif person1.weight == person2.weight:
     print("both of the 2 is a heavy freak.\n")
 else:
     print(f"{person2.name} weighs more than {person1.name}.")
+
+person1.classFunction()
