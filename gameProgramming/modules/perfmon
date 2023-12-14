@@ -1,0 +1,17 @@
+# Python Performance monitoring module by Jahreem jeffers, v0.0
+import time
+
+def execStart():
+    startTime = time.time()
+    return startTime
+
+def execStop():
+    stopTime = time.time()
+    return stoptime 
+
+def execTime(startTime, stopTime):
+    return f"Execuition Time: {startTime - stopTime} seconds.\n"
+    
+
+
+
