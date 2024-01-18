@@ -89,12 +89,23 @@ def calcScore(rnaSequence: str, rnaTime: float) -> int:
     score *= scoreMulti
     return score
 
-def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float) -> None:
-    playerName = input("What si your first name?\n")
+def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float, score: int) -> None:
+    playerName = input("What is your first name?\n")
     lastName = input("What is your last name?\n")
     fullName = playerName + " " + lastName
 
     fileName = "dnaReplicationScore" + fullName + ".txt"
+    saveData = open(fileName, "a")
+    # File Modes
+    # "X" mode -- CREATE FILE, IF FILE EXISTS, EXIT WITH ERROR
+    # "W" mode -- CREATE FILE, IF FILE EXISTS, OVERWRITE IT
+    # "A" mode -- CREATE FILE, IF FILE EXISTS, APPEND TO IT
+    saveData.write(f"DNA Sequence: {dnaSequence}\n RNA Sequence {rnaSequence}\n")
+    saveData.write(f"Transcripition Time: {rnaTime}\n")
+    saveData.write(f"Score: {score}\n")
+    saveData.write(f"{fullName}\n")
+    saveData.write(f"{datetime.datetime.now()}\n")
+    saveData.close()
 
 
 
