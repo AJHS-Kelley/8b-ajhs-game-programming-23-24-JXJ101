@@ -110,8 +110,10 @@ def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float, score: int) ->
 
 
 
-dna= genDNA()
+dna = genDNA()
 rna = doTranscription(dna)
-print(verifySequence(dna, rna[0]))
-print(calcScore(rna[0], rna[1]))
+if verifySequence(dna, rna[0]):
+    score = (calcScore(rna[0] rna [1]))
+    saveScore(dna, rna[0], rna[1], score)
+
 
