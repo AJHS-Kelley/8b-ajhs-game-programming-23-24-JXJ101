@@ -32,6 +32,8 @@ def doTranscription(dnaSequence: str) -> tuple:
     print("Please remember, in the RNA sequence U pairs with A from the DNA sequence.\n")
     rnaStart = time.time() # time.time() returns the number of seconds since 00:00:000- UTC Jan. 01, 1970
     rnaSequence = input("Please enter the matching Rna sequence. Leave no spaces! Then press enter.\n").upper()
+    if rnaSequence not in 'AGCU':
+        print("bro please be the smart guy and put in the RNA code next time.")
     rnaStop = time.time()
     rnaTime = rnaStop - rnaStart
     return (rnaSequence, rnaTime)
@@ -40,6 +42,7 @@ def doTranscription(dnaSequence: str) -> tuple:
     # Tuples CAN have duplicate values.
 
 def verifySequence(dnaSequence: str, rnaSequence:str) -> bool:
+    
     isMatch = False
     if len(dnaSequence) != len(rnaSequence):
         print("The sequences are different lengths and cannot match.\n")
@@ -113,7 +116,7 @@ def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float, score: int) ->
 dna = genDNA()
 rna = doTranscription(dna)
 if verifySequence(dna, rna[0]):
-    score = (calcScore(rna[0] rna [1]))
+    score = (calcScore(rna[0], rna[1]))
     saveScore(dna, rna[0], rna[1], score)
 
 
