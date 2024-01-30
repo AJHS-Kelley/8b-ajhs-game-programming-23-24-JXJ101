@@ -1,4 +1,7 @@
-import dice
+import dice 
+import perfmon
+start = perfmon
+start = perfmon.
 
 
 roll1 = dice.display(1,6)
@@ -21,3 +24,6 @@ def isExploding (roll, sizeRoll):
     else:
         isExploding = False
     return isExploding
+
+
+
