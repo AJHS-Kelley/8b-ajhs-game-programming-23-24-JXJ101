@@ -1,0 +1,6 @@
+DNA Sequence: CCCCT
+ RNA Sequence GGGGA
+Transcripition Time: 12.108405590057373
+Score: 700000
+Ryan Kelley
+2024-02-05 14:03:55.587958
