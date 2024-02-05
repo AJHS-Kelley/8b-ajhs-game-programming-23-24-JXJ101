@@ -1,0 +1,6 @@
+DNA Sequence: TGC
+ RNA Sequence ACG
+Transcripition Time: 5.8575029373168945
+Score: 700000
+JXJ Jeffers
+2024-02-05 13:33:03.913455
