@@ -7,11 +7,11 @@ pygame.display.set_caption('Runner')
 clock  = pygame.time.Clock()
 test_font = pygame.font.Font(None, 50)
 
-sky_surface = test_surface = pygame.image.load('img/ultply/Sky.png')
-ground_surface = pygame.image.load('img/ultply/ground.png')
+sky_surface = test_surface = pygame.image.load('img/ultply/Sky.png').convert()
+ground_surface = pygame.image.load('img/ultply/ground.png').convert()
 text_surface = test_font.render('JXJ game', False, 'Red')
 
-snail_surface = pygame.image.load('img/ultply/snail1.png')
+snail_surface = pygame.image.load('img/ultply/snail1.png').convert_alpha()
 snail_x_pos = 600
 
 while True:
