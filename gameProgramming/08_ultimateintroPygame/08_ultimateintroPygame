@@ -1,5 +1,6 @@
 import pygame
 from sys import exit
+# Almost finished!  Let's get it done Jahreem. 
 
 pygame.init()
 screen = pygame.display.set_mode((800, 400))
