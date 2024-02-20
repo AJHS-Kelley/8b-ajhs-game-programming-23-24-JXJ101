@@ -12,8 +12,8 @@ game_active = True
 sky_surface = test_surface = pygame.image.load('img/ultply/Sky.png').convert()
 ground_surface = pygame.image.load('img/ultply/ground.png').convert()
 
-score_surf = test_font.render('JXJ game', False, (64,64,64))
-score_rect = score_surf.get_rect(center = (400,50))
+#score_surf = test_font.render('JXJ game', False, (64,64,64))
+#score_rect = score_surf.get_rect(center = (400,50))
 
 snail_surf = pygame.image.load('img/ultply/snail1.png').convert_alpha()
 snail_rect = snail_surf.get_rect(bottomright = (600, 300))
