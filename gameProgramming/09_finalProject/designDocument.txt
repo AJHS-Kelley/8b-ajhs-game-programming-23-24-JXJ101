@@ -1,0 +1,14 @@
+Game Genre / Type:gambling
+Theme: casino
+win condition(s): beat the dealer or get to 21
+lose(s): get over 21 or lose to dealer
+
+level / Screens :
+    -- casino
+    -- pool table
+
+objectives / enemies / obstaclels:
+    -- dealer luigi
+
+items / equiment / objects:
+    -- cards
