@@ -12,3 +12,12 @@ objectives / enemies / obstaclels:
 
 items / equiment / objects:
     -- cards
+
+Diffficulty Changes: 
+    -- normal: dont have to be
+    -- hard: will be force to bet
+
+controls: 
+    -- H to hit
+    -- S to stand
+    -- D (double your bet)
