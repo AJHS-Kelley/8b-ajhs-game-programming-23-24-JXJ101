@@ -1,0 +1,16 @@
+#game project Blackjack 0.0 by jahreem jeffers
+import pygame
+import random
+import os
+
+# add in pygame
+pygame.init()
+
+# screen display
+SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
+screen = 
+pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
+pygamedisplay.set_caption("welcome to Blackjack")
+
+# load diffrent images
+
