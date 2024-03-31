@@ -24,6 +24,32 @@ else:
 card_values = {'2': 2, '3':3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
 
 # Define a class for a deck of cards
+class Deck:
+    def __init__(self):
+        self.cards = list(card_values.keys()) * 4 # 4 decks of cards
+    def shuffle(self):
+        random.shuffle(self.cards)
+    
+    def deal_card(self):
+        return self.cards.pop()
+
+# Define a class for the players hand
+class Hand:
+    def __init__(self):
+        self.cards + []
+        self.value = 0
+        self.aces = 0
+    
+    def add_card(self,card):
+        self.cards.append(card)
+        self.value += 1
+
+    def adjust_for_ace(self):
+        while self.value > 21 and self.aces:
+            self.value -= 10
+            self.aces -= 1
+
+
 
 
 
