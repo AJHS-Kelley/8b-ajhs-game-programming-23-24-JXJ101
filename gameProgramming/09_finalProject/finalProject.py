@@ -21,7 +21,7 @@ else:
     pygame.display.set_caption('jackblack -- XFACTOR')
 
 # Define card values
-card_values = {'2': 2, '3':3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
+card_values = {'1': 1, '2': 2, '3':3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
 
 # Define a class for a deck of cards
 class Deck:
@@ -59,3 +59,4 @@ print(card_values)
 
 
 
+YOURMOM = 255, 255, 255
