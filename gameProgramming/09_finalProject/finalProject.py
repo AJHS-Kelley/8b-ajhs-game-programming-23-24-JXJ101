@@ -3,6 +3,8 @@ import sys, random, pygame
 
 resolution = 0# 0 = Low Resolution, 2 = High Reslution
 
+
+
 if resolution == 0:
     x = 800
     y = 600
@@ -18,10 +20,28 @@ difficulty = int(input("Please choose a difficulty. Enter 1 for EASY or 2 for HA
 if difficulty == 1:
     pygame.display.set_caption('jackblack -- SIMPO')
 else:
-    pygame.display.set_caption('jackblack -- XFACTOR')
+    pygame.display.set_caption('jackblack -- LV3XFACTOR')
+
+player_stand = pygame.image.load('img/ultply/t-posingheavy.png').convert_alpha()
+player_stand = pygame.transform.rotozoom(player_stand,0,2)
+player_stand_rect = player_stand.get_rect(center = (400,200))
+
+game_name = test_font.render('JXJ BlackJack', False,(111,196,169))
+game_name_rect = game_name.get_rect(center = (400, 80))
+
+game_message = test_font.render('Press space to play',False,(111,196,169))
+game_message_rect = game_message.get_rect(center = (400,300))
+
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                pygame.quit()
+                exit()
 
 # Define card values
-card_values = {'1': 1, '2': 2, '3':3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
+card_values = {'2': 2, '3':3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
 
 # Define a class for a deck of cards
 class Deck:
@@ -50,13 +70,3 @@ class Hand:
             self.aces -= 1
 
 print(card_values)
-
-
-
-
-
-
-
-
-
-YOURMOM = 255, 255, 255
