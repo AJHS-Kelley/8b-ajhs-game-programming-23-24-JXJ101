@@ -22,7 +22,9 @@ if difficulty == 1:
 else:
     pygame.display.set_caption('jackblack -- LV3XFACTOR')
 
-player_stand = pygame.image.load('img/ultply/t-posingheavy.png').convert_alpha()
+test_font = pygame.font.Font(None, 50)
+
+player_stand = pygame.image.load('img/ultply/background3.PNG').convert_alpha()
 player_stand = pygame.transform.rotozoom(player_stand,0,2)
 player_stand_rect = player_stand.get_rect(center = (400,200))
 
