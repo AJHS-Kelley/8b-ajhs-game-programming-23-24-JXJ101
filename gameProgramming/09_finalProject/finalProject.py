@@ -14,6 +14,8 @@ else:
 screen = pygame.display.set_mode((x, y))
 
 pygame.init()
+clock = pygame.time.Clock()
+game_active = True
 
 difficulty = int(input("Please choose a difficulty. Enter 1 for EASY or 2 for HARD.\n"))
 
@@ -22,11 +24,15 @@ if difficulty == 1:
 else:
     pygame.display.set_caption('jackblack -- LV3XFACTOR')
 
+
 test_font = pygame.font.Font(None, 50)
 
-player_stand = pygame.image.load('img/ultply/background3.PNG').convert_alpha()
-player_stand = pygame.transform.rotozoom(player_stand,0,2)
-player_stand_rect = player_stand.get_rect(center = (400,200))
+game_name = test_font.render('JXJ blackjack', False,(111,196,169))
+game_name_rect = game_name.get_rect(center = (400, 80))
+
+
+background = pygame.image.load('img/ultply/background3.PNG').convert_alpha()
+background = pygame.transform.rotozoom(background,0,2)
 
 game_name = test_font.render('JXJ BlackJack', False,(111,196,169))
 game_name_rect = game_name.get_rect(center = (400, 80))
@@ -34,13 +40,6 @@ game_name_rect = game_name.get_rect(center = (400, 80))
 game_message = test_font.render('Press space to play',False,(111,196,169))
 game_message_rect = game_message.get_rect(center = (400,300))
 
-
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                pygame.quit()
-                exit()
 
 # Define card values
 card_values = {'2': 2, '3':3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
@@ -72,3 +71,14 @@ class Hand:
             self.aces -= 1
 
 print(card_values)
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                pygame.quit()
+                exit()
+
+    if game_active:
+        screen.blit(background, (0,0))
+    pygame.display.update()
+    clock.tick(60)
