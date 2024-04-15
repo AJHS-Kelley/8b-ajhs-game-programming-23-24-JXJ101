@@ -42,7 +42,7 @@ game_message_rect = game_message.get_rect(center = (400,300))
 
 
 # Define card values
-card_values = {'2': 2, '3':3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 11}
+card_values = {'2': 2, '3':3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 1}
 
 # Define a class for a deck of cards
 class Deck:
@@ -57,26 +57,41 @@ class Deck:
 # Define a class for the players hand
 class Hand:
     def __init__(self):
-        self.cards + []
+        self.cards = []
         self.value = 0
         self.aces = 0
     
-    def add_card(self,card):
+    def add_card(self, card):
         self.cards.append(card)
-        self.value += 1
+        self.value +=  card_values[card]
+        if card == 'A':
+            self.value += 1
 
     def adjust_for_ace(self):
         while self.value > 21 and self.aces:
             self.value -= 10
             self.aces -= 1
 
-print(card_values)
+# Define a function for taking a player's input
+
+def take_player_input():
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_h: 
+                    return 'h'
+
+                
+
+                    print(card_values)
 while True:
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 pygame.quit()
                 exit()
+
+
 
     if game_active:
         screen.blit(background, (0,0))
