@@ -1,7 +1,19 @@
 import sys, random, pygame
 #final project, jahreem jeffers, V0.0
+screen = pygame.display.set_mode((SCREEN_WIDTH SCREEN_HEIGHT))
+pygame.display.set_caption("JXJ's Blackjack")
 
 resolution = 0# 0 = Low Resolution, 2 = High Reslution
+
+background = pygame.image.load('img/ultply/background3.PNG').convert_alpha()
+background = pygame.transform.rotozoom(background,0,2)
+
+test_font = pygame.font.Font(None, 50)
+
+game_name = test_font.render('JXJ blackjack', False,(111,196,169))
+game_name_rect = game_name.get_rect(center = (400, 80))
+
+
 
 
 
@@ -23,20 +35,6 @@ if difficulty == 1:
     pygame.display.set_caption('jackblack -- SIMPO')
 else:
     pygame.display.set_caption('jackblack -- LV3XFACTOR')
-
-
-test_font = pygame.font.Font(None, 50)
-
-game_name = test_font.render('JXJ blackjack', False,(111,196,169))
-game_name_rect = game_name.get_rect(center = (400, 80))
-
-
-background = pygame.image.load('img/ultply/background3.PNG').convert_alpha()
-background = pygame.transform.rotozoom(background,0,2)
-
-game_name = test_font.render('JXJ BlackJack', False,(111,196,169))
-game_name_rect = game_name.get_rect(center = (400, 80))
-
 game_message = test_font.render('Press space to play',False,(111,196,169))
 game_message_rect = game_message.get_rect(center = (400,300))
 
