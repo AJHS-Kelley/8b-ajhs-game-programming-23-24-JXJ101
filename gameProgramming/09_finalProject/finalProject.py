@@ -80,10 +80,31 @@ def take_player_input():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_h: 
                     return 'h'
+                elif event.key == pygame.K_s:
+                    return's'
+        pygame.event.pump()
 
-                
+# define a function to display cards cards 
+def display_cards(player_name, player, dealer, show_dealer_card= False):
+    #Clear the screen
+    screen.blit(background_image, (0, 0))
+    
+    # Disply player's hand
+    for i, card in enumerate(player.cards):
+        screen.blit(card_image, (100 + i * 120, SCREEN_HEIGHT - 300))
 
-                    print(card_values)
+    # Display dealer's hand
+    if show_dealer_hand:
+        for i, card in enumerate(player.cards):
+            screen.blit(card_image, (100 + i * 120, SCREEN_HEIGHT - 500))
+    else:
+        screen.blit(card_image, (100, SCREEN_HEIGHT - 500))
+
+    pygame.display.flip()
+    
+
+
+print(card_values)
 while True:
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
