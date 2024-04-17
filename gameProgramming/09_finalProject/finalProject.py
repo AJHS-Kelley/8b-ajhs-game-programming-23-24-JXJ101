@@ -1,6 +1,10 @@
 import sys, random, pygame
 #final project, jahreem jeffers, V0.0
-screen = pygame.display.set_mode((SCREEN_WIDTH SCREEN_HEIGHT))
+
+pygame.init()
+
+SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("JXJ's Blackjack")
 
 resolution = 0# 0 = Low Resolution, 2 = High Reslution
@@ -13,7 +17,7 @@ test_font = pygame.font.Font(None, 50)
 game_name = test_font.render('JXJ blackjack', False,(111,196,169))
 game_name_rect = game_name.get_rect(center = (400, 80))
 
-card_image = pygame.image.oad('img/ultply/PNG/Cards(large)')
+card_image = pygame.image.load('img/ultply/PNG/Cards (large)/card_back.png')
 
 
 
@@ -92,7 +96,7 @@ def display_cards(player_name, player, dealer, show_dealer_card= False):
         screen.blit(card_image, (100 + i * 120, screen - 300))
 
     # Display dealer's hand
-    if show_dealer_hand:
+    if  show_dealer_hand:
         for i, card in enumerate(player.cards):
             screen.blit(card_image, (100 + i * 120, screen - 500))
     else:
