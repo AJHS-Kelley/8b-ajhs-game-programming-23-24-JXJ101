@@ -13,7 +13,7 @@ test_font = pygame.font.Font(None, 50)
 game_name = test_font.render('JXJ blackjack', False,(111,196,169))
 game_name_rect = game_name.get_rect(center = (400, 80))
 
-
+card_image = pygame.image.oad('img/ultply/PNG/Cards(large)')
 
 
 
@@ -85,18 +85,18 @@ def take_player_input():
 # define a function to display cards cards 
 def display_cards(player_name, player, dealer, show_dealer_card= False):
     #Clear the screen
-    screen.blit(background_image, (0, 0))
+    screen.blit(background, (0, 0))
     
     # Disply player's hand
     for i, card in enumerate(player.cards):
-        screen.blit(card_image, (100 + i * 120, SCREEN_HEIGHT - 300))
+        screen.blit(card_image, (100 + i * 120, screen - 300))
 
     # Display dealer's hand
     if show_dealer_hand:
         for i, card in enumerate(player.cards):
-            screen.blit(card_image, (100 + i * 120, SCREEN_HEIGHT - 500))
+            screen.blit(card_image, (100 + i * 120, screen - 500))
     else:
-        screen.blit(card_image, (100, SCREEN_HEIGHT - 500))
+        screen.blit(card_image, (100, screen - 500))
 
     pygame.display.flip()
     
