@@ -103,7 +103,24 @@ def display_cards(player_name, player, dealer, show_dealer_card= False):
         screen.blit(card_image, (100, screen - 500))
 
     pygame.display.flip()
-    
+
+
+# Define a function to check if the player has won or not and if possible tied
+def determine_outcome(player_name, player, dealer, bet):
+    if player.value > 21:
+        print("Player busts! Dealer luigi wins!")
+        return -bet
+    elif dealer.value > 21:
+        print("Dealer busts! {} wins!".format(player_name))
+        return bet * 2 
+    elif player.value == dealer.value:
+        print("luckily Its a tie")
+        return 0
+    elif player.value > dealer.value:
+        print("{} wins!".format(player_name))
+    else:
+        print("Dealer wins!")
+        return -bet
 
 
 print(card_values)
