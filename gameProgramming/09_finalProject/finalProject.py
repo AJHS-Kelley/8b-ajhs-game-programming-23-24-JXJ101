@@ -145,7 +145,19 @@ def play_blackjack():
         dealer_hand.add_card(deck.deal_card())
     display_cards(player_name, player_hand, dealer_hand)
 
-
+    # Player's turn
+    while True:
+        choice = take_player_input()
+        if choice == 'h':
+            player_hand.add_card(deck.deal_card())
+            player_hand.adjustfor_ace()
+            display_cards(player_name, player_hand, dealer_hand)
+            if player_hand.value > 21:
+                money += determine_outcome(player_name, player_hand, dealer_hand, bet)
+                break
+        else:
+            break
+        
 
 print(card_values)
 while True:
