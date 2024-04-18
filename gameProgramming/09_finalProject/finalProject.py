@@ -122,6 +122,30 @@ def determine_outcome(player_name, player, dealer, bet):
         print("Dealer wins!")
         return -bet
 
+# where the real stuff to play the game
+def play_blackjack():
+    player_name = input("Enter your name plz: ")
+    money = 100 # the amount of money you start with
+    while True:
+        print("\n{}'s Money: ${}".format(player_name, money))
+    bet = int(input("place your bet: $"))
+    if bet > money: 
+        print("pick the amount you have broke boi.")
+    break
+
+    deck = Deck()
+    deck.shuffle()
+
+    player_hand = Hand()
+    dealer_hand = Hand()
+
+    # deal
+    for _ in range(2):
+        player_hand.add_card(deck.deal_card())
+        dealer_hand.add_card(deck.deal_card())
+    display_cards(player_name, player_hand, dealer_hand)
+
+
 
 print(card_values)
 while True:
