@@ -47,7 +47,8 @@ game_active = True
 card_images = {}
 for suit in ['hearts', 'diamonds', 'clubs', 'spades']:
     for rank in range(1, 14):
-        card_images[(suit, rank)] = pygame.image.load(f'img/ultply/PNG/Cards (Large)/card_{suit}_{rank}.png')
+        card_images[(suit, rank)] = pygame.image.load(f'img/ultply/PNG/Cards_(Large)/card_{suit}_{rank}.png')
+
 
 # Define a class for a deck of cards
 class Deck:
