@@ -44,12 +44,15 @@ game_active = True
 
 
 # Define card values
-card_values = {'2': 2, '3':3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 1}
+card_images = {}
+for suit in ['hearts', 'diamonds', 'clubs', 'spades']:
+    for rank in range(1, 14):
+        card_images[(suit, rank)] = pygame.image.load(f'img/ultply/PNG/Cards (Large)/card_{suit}_{rank}.png')
 
 # Define a class for a deck of cards
 class Deck:
     def __init__(self):
-        self.cards = list(card_values.keys()) * 4 # 4 decks of cards
+        self.cards = list(card_images.keys()) * 4 # 4 decks of cards
     def shuffle(self):
         random.shuffle(self.cards)
     
@@ -65,7 +68,7 @@ class Hand:
     
     def add_card(self, card):
         self.cards.append(card)
-        self.value +=  card_values[card]
+        self.value +=  card_images[card]
         if card == 'A':
             self.value += 1
 
