@@ -29,10 +29,11 @@ def load_card_images():
             cards[value] = pygame.image.load(filename)
     return cards
 
+
 # Load card images
 card_images = load_card_images()
-#card_image = pygame.image.load('img/ultply/PNG/Cards_(large)/card_back.png')
-#pygame.display.set_caption('JXJ black jack')
+card_image = pygame.image.load('img/ultply/PNG')
+pygame.display.set_caption('JXJ black jack')
 
 
 if resolution == 0:
@@ -60,8 +61,8 @@ game_active = True
 # Define card values
 card_images = {}
 #for suit in ['hearts', 'diamonds', 'clubs', 'spades']:
-for rank in range(1, 14):
-    card_images[(suit, rank)] = pygame.image.load(f'img/ultply/PNG/Cards_(Large)/card_{suit}_{rank}.png')
+    #for rank in range(1, 14):
+        #card_images[(suit, rank)] = pygame.image.load(f'img/ultply/PNG/Cards_(Large)/card_{suit}_{rank}.png')
 
 
 # Define a class for a deck of cards
