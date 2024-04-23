@@ -20,19 +20,19 @@ test_font = pygame.font.Font(None, 50)
 game_name = test_font.render('JXJ blackjack', False,(111,196,169))
 game_name_rect = game_name.get_rect(center = (400, 80))
 
-def load_card_images():
-    cards = {}
-    suits = ['diamonds', 'club', 'hearts', 'spades']
-    for suit in suits:
-        for value in ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']:
-            filename = os.path.join("PNG", f"card_{value}.png")
-            cards[value] = pygame.image.load(filename)
-    return cards
+#def load_card_images():
+    #cards = {}
+    #suits = ['diamonds', 'club', 'hearts', 'spades']
+    #for suit in suits:
+        #for value in ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']:
+            #filename = os.path.join("PNG", f"card_{value}.png")
+            #cards[value] = pygame.image.load(filename)
+    #return cards
 
 
 # Load card images
-card_images = load_card_images()
-card_image = pygame.image.load('img/ultply/PNG')
+#card_images = load_card_images()
+#card_image = pygame.image.load('img/ultply/PNG')
 pygame.display.set_caption('JXJ black jack')
 
 
