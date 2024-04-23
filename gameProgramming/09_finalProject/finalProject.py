@@ -19,8 +19,17 @@ test_font = pygame.font.Font(None, 50)
 game_name = test_font.render('JXJ blackjack', False,(111,196,169))
 game_name_rect = game_name.get_rect(center = (400, 80))
 
-card_image = pygame.image.load('img/ultply/PNG/Cards_(large)/card_back.png')
-pygame.display.set_caption('JXJ black jack')
+def load_card_images():
+    cards = {}
+    for value in ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']:
+        filename = os.path.join("images", f"card_{value}.png")
+        cards[value] = pygame.image.load(filename)
+    return cards
+
+# Load card images
+card_images = load_card_images()
+#card_image = pygame.image.load('img/ultply/PNG/Cards_(large)/card_back.png')
+#pygame.display.set_caption('JXJ black jack')
 
 
 if resolution == 0:
@@ -95,7 +104,7 @@ def take_player_input():
 # define a function to display cards 
 def display_cards(player_name, player, dealer, show_dealer_card=False):
     #Clear the screen
-    screen.blit(background, (0, 0))
+    screen.fill((0, 128, 0))
     
     # Disply player's hand
     for i, card in enumerate(player.cards):
