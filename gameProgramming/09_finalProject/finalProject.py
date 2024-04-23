@@ -1,4 +1,6 @@
-import sys, random, pygame
+import sys
+import random
+import pygame
 #final project, jahreem jeffers, V0.0
 
 pygame.init()
@@ -18,7 +20,7 @@ game_name = test_font.render('JXJ blackjack', False,(111,196,169))
 game_name_rect = game_name.get_rect(center = (400, 80))
 
 card_image = pygame.image.load('img/ultply/PNG/Cards_(large)/card_back.png')
-
+pygame.display.set_caption('JXJ black jack')
 
 
 if resolution == 0:
@@ -128,7 +130,7 @@ def determine_outcome(player_name, player, dealer, bet):
 
 # where the real stuff to play the game
 def play_blackjack():
-    player_name = input("Enter your name plz: ")
+    player_name = input(f"Enter your name plz: ")
     money = 100 # the amount of money you start with
     while True:
         print("\n{}'s Money: ${}".format(player_name, money))
