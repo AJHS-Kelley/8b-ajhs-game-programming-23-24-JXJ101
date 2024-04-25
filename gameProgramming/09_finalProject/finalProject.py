@@ -1,6 +1,8 @@
-import sys, os, random, pygame
+import sys
+import random
+import pygame
+import os
 #final project, jahreem jeffers, V0.0
-
 
 pygame.init()
 
@@ -10,7 +12,7 @@ pygame.display.set_caption("JXJ's Blackjack")
 
 resolution = 0# 0 = Low Resolution, 2 = High Reslution
 
-background = pygame.image.load('img/ultply/background3.PNG').convert_alpha()
+background = pygame.image.load('img/ultply/background2.jfif').convert_alpha()
 background = pygame.transform.rotozoom(background,0,2)
 
 test_font = pygame.font.Font(None, 50)
@@ -41,6 +43,11 @@ else:
     x = 1920
     y = 1080
 screen = pygame.display.set_mode((x, y))
+WIDTH = 800
+HEIGHT = 600
+CARD_WIDTH = 70
+CARD_HEIGHT = 100
+
 
 pygame.init()
 clock = pygame.time.Clock()
@@ -121,8 +128,10 @@ def display_cards(player_name, player, dealer, show_dealer_card=False):
 
     #pygame.display.flip()
 
-    player_hand = [(random.choice(['hearts', 'diamonds', 'clubs', ]))]
-
+    player_hand = [(random.choice(['hearts', 'diamonds', 'clubs', 'spades']), random.randint(1,13)) for _ in range(2)]
+    for i, card in enumerate(player_hand):
+        card_image = card_images[card]
+        screen.blit(card_image, (300 + i * (CARD_WIDTH + 10), HEIGHT - 150))
 
 # Define a function to check if the player has won or not and if possible tied
 def determine_outcome(player_name, player, dealer, bet):
