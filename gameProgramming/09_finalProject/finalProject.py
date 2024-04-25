@@ -60,9 +60,9 @@ game_active = True
 
 # Define card values
 card_images = {}
-#for suit in ['hearts', 'diamonds', 'clubs', 'spades']:
-    #for rank in range(1, 14):
-        #card_images[(suit, rank)] = pygame.image.load(f'img/ultply/PNG/Cards_(Large)/card_{suit}_{rank}.png')
+for suit in ['hearts', 'diamonds', 'clubs', 'spades']:
+    for rank in range(1, 14):
+        card_images[(suit, rank)] = pygame.image.load(f'img/ultply/Cards_(Large)/card_{suit}_{rank}.png')
 
 
 # Define a class for a deck of cards
@@ -111,17 +111,19 @@ def display_cards(player_name, player, dealer, show_dealer_card=False):
     screen.fill((0, 128, 0))
     
     # Disply player's hand
-    for i, card in enumerate(player.cards):
-        screen.blit(card_images[card], (100 + i * 120, screen - 300))
+    #for i, card in enumerate(player.cards):
+        #screen.blit(card_images[card], (100 + i * 120, screen - 300))
 
     # Display dealer's hand
-    if  show_dealer_card:
-        for i, card in enumerate(player.cards):
-            screen.blit(card_images[card], (100 + i * 120, screen - 500))
-    else:
-        screen.blit(card_images['2'], (100, screen - 500))
+    #if  show_dealer_card:
+        #for i, card in enumerate(player.cards):
+            #screen.blit(card_images[card], (100 + i * 120, screen - 500))
+    #else:
+        #screen.blit(card_images['2'], (100, screen - 500))
 
-    pygame.display.flip()
+    #pygame.display.flip()
+
+    player_hand = [(random.choice(['hearts', 'diamonds', 'clubs', ]))]
 
 
 # Define a function to check if the player has won or not and if possible tied
