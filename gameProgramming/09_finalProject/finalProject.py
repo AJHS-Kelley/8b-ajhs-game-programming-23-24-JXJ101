@@ -12,7 +12,7 @@ pygame.display.set_caption("JXJ's Blackjack")
 
 resolution = 0# 0 = Low Resolution, 2 = High Reslution
 
-background = pygame.image.load('img/ultply/background2.jfif').convert_alpha()
+background = pygame.image.load('img/ultply/background1.jfif').convert_alpha()
 background = pygame.transform.rotozoom(background,0,2)
 
 test_font = pygame.font.Font(None, 50)
