@@ -1,7 +1,4 @@
-import sys
-import random
-import pygame
-import os
+import sys, random, pygame, os
 #final project, jahreem jeffers, V0.0
 
 pygame.init()
